@@ -30,7 +30,6 @@ class Feed(models.Model):
         if new_feed:
             self.get_feed_articles()
 
-
     def get_feed_articles(self):
             feed_data = feedparser.parse(self.url)
 
@@ -61,8 +60,7 @@ class Feed(models.Model):
                 article.feed = self
                 article.save()
         
-   
-
+        
 class Article(models.Model):
     feed = models.ForeignKey(Feed)
     title = models.CharField(max_length=200)
