@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Article, Feed
 
 class ArticleSerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
@@ -7,4 +7,10 @@ class ArticleSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=200)
     url = serializers.URLField()
     description = serializers.CharField(source='description_truncated')
-    publication_date = serializers.DateTimeField(format='%A %B %d, %Y %-I:%M %p')
+    #publication_date = serializers.DateTimeField(format='%A %B %d, %Y %-I:%M %p')
+
+class FeedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feed
+        fields = ('title', 'url', 'is_active')
+    

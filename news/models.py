@@ -54,7 +54,8 @@ class Feed(models.Model):
                         published = entry.created_parsed
 
                 publication_date = datetime.datetime.fromtimestamp(mktime(published))
-                date_string = publication_date.strftime('%Y-%m-%d %H:%M:%S')
+                date_string = publication_date.strftime('%m-%d-%Y %H:%M:%S')
+                #date_string = publication_date.strftime("%m-%d-%Y %H:%M%p")
                 article.publication_date = date_string
 
                 article.feed = self
@@ -67,7 +68,7 @@ class Article(models.Model):
     url = models.URLField(verbose_name="URL")
     description = models.TextField()
     description_truncated = models.TextField(blank=True, null=True)
-    publication_date = models.DateTimeField()
+    #publication_date = models.DateTimeField()
 
     def __str__(self):
         return self.title
