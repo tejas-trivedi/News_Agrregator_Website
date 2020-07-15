@@ -139,6 +139,13 @@ REST_FRAMEWORK = {
 # Setup CORS Headers
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = (
+    'Access-Control-Allow-Origin',
+    'localhost:3000',
+)
+CSRF_COOKIE_NAME = "csrftoken"
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

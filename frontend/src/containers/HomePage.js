@@ -8,17 +8,31 @@ class HomePage extends React.Component {
     state = {
         articles: [],
     }
-    componentDidMount() {
-            axios.get('http://localhost:8000/news/api/article', )
-                .then(res => {
-                    this.setState({
-                        articles: res.data
-                    });
-                    console.log(res.data)
-                })
 
+    //componentDidMount()
+    fetchArticles = () => {
+        axios.get('http://localhost:8000/news/api/article/')
+            .then(res => {
+                this.setState({
+                    articles: res.data
+                });
+                console.log(res.data)
+            });
+
+    }
+
+    componentDidMount() {
+        this.fetchArticles();
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.token) {
+            this.fetchArticles();
         }
-        /* Article data = { this.state }*/
+    }
+
+
+    /* Article data = { this.state }*/
     render() {
         return ( <
             div >
@@ -30,10 +44,12 @@ class HomePage extends React.Component {
 
             <
             /div>
-        )
+        );
     }
 }
 
+
+/*
 const mapStateToProps = state => {
     return {
         userdata: state.userdata
@@ -47,3 +63,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+*/
+
+export default HomePage;

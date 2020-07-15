@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -43,9 +44,42 @@ class Articles extends React.Component {
                         token: state.token
                     }
                 }
-                const mapDispatchToProps = dispatch => {
-                    return {
-                        logout: () => dispatch(logout())
-                    }
-                }
-                export default connect(mapStateToProps, mapDispatchToProps)(Articles);
+
+                export default connect(mapStateToProps)(Articles);
+
+*/
+
+import React from "react";
+
+
+const Articles = props => {
+        return ( <
+            div >
+            dataSource = {
+                props.data
+            }
+            renderItem = {
+                item => ( <
+
+                    item.title
+
+                    title = { <
+                        a href = {
+                            item.id
+                        } > {
+                            item.title
+                        } <
+                        /a>}
+                        description = {
+                            item.description
+                        }
+                        />
+                    )
+                } <
+                /div>
+
+            );
+
+        }
+
+        export default Articles;
