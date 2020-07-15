@@ -51,7 +51,6 @@ class Articles extends React.Component {
 
 import React from "react";
 
-
 const Articles = props => {
         return ( <
             div >
