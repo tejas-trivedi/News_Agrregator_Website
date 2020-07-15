@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import HomePage from "./containers/HomePage"
+import FeedPage from "./containers/FeedPage"
 import { connect } from 'react-redux'
 
 
@@ -23,9 +24,13 @@ class BaseRouter extends React.Component {
             <
             Switch >
             <
-            Route exact path = "/"
+            Route exact path = "/articles/"
             component = { HomePage }
-            />            < /
+            />  <
+            Route exact path = "/feeds/"
+            component = { FeedPage }
+            /> <
+            /
             Switch > <
             /BrowserRouter>
         );

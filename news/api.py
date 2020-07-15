@@ -21,7 +21,7 @@ class ArticlesList(generics.ListAPIView):
         return Response(serializer.data)
     
     def get_queryset(self):
-        queryset = Article.objects.order_by('pk')
+        queryset = Article.objects.order_by('-pk')
         
         if "feed_id" in self.kwargs:
             feed_id = self.kwargs['feed_id']

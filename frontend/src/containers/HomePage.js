@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import Articles from '../components/Article'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 class HomePage extends React.Component {
     state = {
@@ -25,11 +23,12 @@ class HomePage extends React.Component {
     render() {
         return ( <
             div > {
+
                 this.state.articles.map(item => ( <
                     div key = { item.id } >
                     <
                     h3 > Title - > { item.title } < /h3> <
-                    a href = "{item.url}" > { item.url } < /a> <
+                    a href = "{item.url}" > Source URL: { item.url } < /a> <
                     br / >
                     <
                     span > Description: { item.description } < /span> <
