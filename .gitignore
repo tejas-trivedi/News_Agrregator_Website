@@ -3,3 +3,4 @@
 .vscode/settings.json
 **/migrations/
 **/**/migrations
+node_modules
