@@ -8,7 +8,7 @@ class FeedPage extends React.Component {
 
     async componentDidMount() {
         try {
-            const res = await fetch('http://127.0.0.1:8000/news/api/feed/');
+            const res = await fetch('http://127.0.0.1:8000/news/api/feeds/');
             const feeds = await res.json();
             this.setState({
                 feeds

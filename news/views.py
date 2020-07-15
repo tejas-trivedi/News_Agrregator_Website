@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from rest_framework import generics, status
+from rest_framework.decorators import api_view
+from rest_framework import status
 from .models import Feed
 from .forms import FeedForm
 

@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Article, Feed
 #from .pagination import LinkHeaderPagination
 from .serializers import ArticleSerializer, FeedSerializer
+from rest_framework.generics import (CreateAPIView)
 
 class ArticlesList(generics.ListAPIView):
     serializer_class = ArticleSerializer
@@ -39,5 +40,9 @@ class ArticlesList(generics.ListAPIView):
     
     
 class FeedList(generics.ListAPIView):
+    serializer_class = FeedSerializer
+    queryset = Feed.objects.all()
+    
+class NewFeed(CreateAPIView):
     serializer_class = FeedSerializer
     queryset = Feed.objects.all()
