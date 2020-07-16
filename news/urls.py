@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-from .api import ArticlesList, FeedList, NewFeed
+from .api import ArticlesList, FeedList, NewFeed, ArticleDetail
 
 urlpatterns = [
     url(r'^articles/$', views.articles_list, name='articles-list'),
@@ -10,6 +10,7 @@ urlpatterns = [
 
     
     url(r'^api/article/', ArticlesList.as_view()),
+    url(r'^api/article/<pk>', ArticleDetail.as_view()),
     url(r'^api/feeds/', FeedList.as_view()),
     url(r'^api/feed/new/', NewFeed.as_view()),
     

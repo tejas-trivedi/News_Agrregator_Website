@@ -37,6 +37,10 @@ class ArticlesList(generics.ListAPIView):
         #    queryset = queryset.filter(publication_date__gte=datetime.now()-timedelta(days=int(days)))
         
         return queryset
+
+class ArticleDetail(generics.RetrieveAPIView):
+    serializer_class = ArticleSerializer
+    queryset = Article.objects.all()
     
     
 class FeedList(generics.ListAPIView):
