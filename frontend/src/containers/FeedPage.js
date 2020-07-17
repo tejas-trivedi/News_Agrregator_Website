@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import { render } from 'react-dom';
+
 
 class FeedPage extends React.Component {
     state = {
@@ -20,7 +23,10 @@ class FeedPage extends React.Component {
 
     render() {
         return ( <
-            div > {
+                div >
+                <
+                h1 > Template
+                for Feed List < /h1> {
 
                 this.state.feeds.map(item => ( <
                     div key = { item.title } >
@@ -28,6 +34,7 @@ class FeedPage extends React.Component {
                     h3 > Title - > { item.title } < /h3> <
                     a href = "{item.url}" > Source URL: { item.url } < /a> <
                     br / >
+
                     <
                     span > Status: { item.is_active } < /span> <
                     br / > < br / > < br / >
@@ -36,8 +43,10 @@ class FeedPage extends React.Component {
                 ))
             } <
             /div>
-        );
-    }
+    );
 }
+}
+
+
 
 export default FeedPage;

@@ -41,7 +41,6 @@ class NewFeedForm extends React.Component {
             <
             input type = 'submit' /
             >
-            >
             <
             /
             div >
