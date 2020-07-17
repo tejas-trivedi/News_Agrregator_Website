@@ -12,5 +12,10 @@ class ArticleSerializer(serializers.Serializer):
 class FeedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feed
-        fields = ('title', 'url', 'is_active')
+        fields = ('id', 'title', 'url', 'is_active')
     
+    
+#class FeedArticlesSerializer(serializers.Serializer):
+#    class Meta:
+#        model = Article
+        
