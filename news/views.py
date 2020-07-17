@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .models import Feed
+from .models import Feed, Article
 from .forms import FeedForm
 
 # Create your views here.
@@ -22,6 +22,20 @@ def articles_list(request, feed_id=None):
     
     return render(request, "x.html", context)
     #return render(request, "articles_list.html", context)
+    
+    
+
+def articles_list_view(request):
+    articles = Article.objects.all()
+    
+    context = {
+        'articles': articles
+    }
+    
+    return render(request, "x.html", context)
+
+
+
     
 def feeds_list(request):
     feeds = Feed.objects.all()
