@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
 
 class HomePage extends React.Component {
     state = {
@@ -25,6 +27,42 @@ class HomePage extends React.Component {
         }
     }
 
+
+
+    render() {
+        return (
+
+            <
+            div > {
+
+                this.state.articles.map(item => ( <
+                    div key = { item.id } >
+
+
+                    <
+                    h1 > Title - > { item.title } < /h1>  <
+                    a href = "{item.url}" > Source URL: { item.url } < /a>  <
+                    br / >
+
+                    <
+                    div dangerouslySetInnerHTML = {
+                        {
+                            __html: item.description
+                        }
+                    }
+                    />  <
+                    br / > < br / > < br / >
+                    <
+                    /div> 
+
+                ))
+            } < /div>
+        );
+    }
+}
+export default HomePage;
+
+/*
     render() {
         return ( <
             div > {
@@ -35,8 +73,16 @@ class HomePage extends React.Component {
                     h3 > Title - > { item.title } < /h3> <
                     a href = "{item.url}" > Source URL: { item.url } < /a> <
                     br / >
+
+
                     <
-                    span > Description: { item.description } < /span> <
+                    span > Description: { item.description } < /span>
+
+
+
+
+
+                    <
                     br / > < br / > < br / >
                     <
                     /div>
@@ -47,8 +93,9 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
 
+export default HomePage;
+*/
 
 
 
