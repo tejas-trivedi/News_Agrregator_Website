@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
+
 
 
 class FeedPage extends React.Component {
@@ -29,14 +31,20 @@ class FeedPage extends React.Component {
                 for Feed List < /h1> {
 
                 this.state.feeds.map(item => ( <
-                    div key = { item.title } >
+                    div key = { item.id } >
                     <
-                    h3 > Title - > { item.title } < /h3> <
-                    a href = "{item.url}" > Source URL: { item.url } < /a> <
                     br / >
 
                     <
-                    span > Status: { item.is_active } < /span> <
+                    h3 > Title - > { item.title }(ID: { item.id }) < /h3> <
+                    Link to = { `/articles/${item.id}` } > Articles from { item.title } < /Link>   <
+                    br / >
+
+                    <
+                    Link to = { `{item.url}` } > Source URL: { item.url } < /Link> <
+                    br / >
+                    <
+                    span > Status: { item.is_active } < /span>  <
                     br / > < br / > < br / >
                     <
                     /div>

@@ -25,7 +25,7 @@ class BaseRouter extends React.Component {
             <
             Switch >
             <
-            Route exact path = "/articles/"
+            Route exact path = "/articles/:feedID/"
             component = { HomePage }
             />  <
             Route exact path = "/feeds/"

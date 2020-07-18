@@ -9,10 +9,13 @@ class HomePage extends React.Component {
 
     async componentDidMount() {
 
-        // const feedID = this.props.match.params.feedID;
+        const feedID = this.props.match.params.feedID;
+        let url = 'http://127.0.0.1:8000/news/api/article/' + feedID;
+        console.log(feedID)
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/news/api/article/'); // + feedID); // fetching the data from api, before the page loaded
+            const res = await fetch(url); // + feedID); // fetching the data from api, before the page loaded
+            //const res = await fetch('http://127.0.0.1:8000/news/api/article/' + '${feedID}/');
             const articles = await res.json();
             this.setState({
                 articles
