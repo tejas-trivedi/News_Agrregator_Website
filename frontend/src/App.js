@@ -20,14 +20,12 @@ function App() {
         /Router> 
 
         <
-        /div>  <
-        /Provider>
+        /div>  < /
+        Provider >
     );
 }
 
 export default App;
-
-
 
 
 

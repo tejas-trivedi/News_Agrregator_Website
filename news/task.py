@@ -12,8 +12,39 @@ def get_feed_articles_task(feed_id):
     feed = Feed.objects.get(pk=feed_id)
 
     logger.info("Retrieving Articles for " + feed.title)
-
     return feed.get_feed_articles()
+
+
+
+@periodic_task(run_every=(crontab(minute=0, hour='*/3')), name="update_all_feed_articles", ignore_result=True)
+def update_all_feed_articles_task():
+    """ updates articles for all RSS/Atom feeds """
+    feeds = Feed.objects.all()
+
+    for feed in feeds:
+        logger.info("Retrieving Articles for " + feed.title)
+
+        feed.get_feed_articles()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @task(name="truncate_descriptions")
 def truncate_descriptions_task():
@@ -26,13 +57,3 @@ def truncate_descriptions_task():
         article.description_truncated = truncatewords_html(article.description, 150)
 
         article.save()
-
-@periodic_task(run_every=(crontab(minute=0, hour='*/3')), name="update_all_feed_articles", ignore_result=True)
-def update_all_feed_articles_task():
-    """ updates articles for all RSS/Atom feeds """
-    feeds = Feed.objects.all()
-
-    for feed in feeds:
-        logger.info("Retrieving Articles for " + feed.title)
-
-        feed.get_feed_articles()

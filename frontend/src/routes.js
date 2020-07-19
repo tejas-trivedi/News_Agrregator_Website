@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import HomePage from "./containers/HomePage"
 import FeedPage from "./containers/FeedPage"
 import NewFeedForm from "./components/Form"
+import LoginSignup from "./containers/LoginPage"
 import { connect } from 'react-redux'
 
 
@@ -24,7 +25,11 @@ class BaseRouter extends React.Component {
             BrowserRouter >
             <
             Switch >
+
             <
+            Route exact path = "/users/"
+            component = { LoginSignup }
+            /> <
             Route exact path = "/articles/:feedID/"
             component = { HomePage }
             />  <
