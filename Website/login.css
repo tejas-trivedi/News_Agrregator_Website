@@ -40,6 +40,7 @@ h1{
     border:none;
     background-color: #d3d3d3;
     border-radius: 5px;
+    font-size:18px;
 }
 
 .list li input[type="button"]{
@@ -56,7 +57,7 @@ header{
 a{
     float:right;
     margin-left: 56px;
-
+    margin-top: 30px;
     text-decoration:none;
     padding:5px;
     font-family:"Verdana";
@@ -72,7 +73,7 @@ a:hover{
 }
 img{
    
-    margin-left: 220px;
+   margin-top: 30px; margin-left: 220px;
 }
 .logo{
     margin-left: 100px;
