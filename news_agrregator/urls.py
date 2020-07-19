@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
+from rest_framework_jwt.views import obtain_jwt_token
 
 
 urlpatterns = [
     url('admin/', admin.site.urls),
+    url(r'^user/', include('user.urls')),
     
     #url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
-    
+    url(r'^token-auth/', obtain_jwt_token),
     url(r'^news/', include('news.urls')),
 ]

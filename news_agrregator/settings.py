@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     
     'news',
+    'user',
+    #'user.apps.CoreConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -54,6 +56,10 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'news_agrregator.utils.my_jwt_response_handler'
+}
 
 ROOT_URLCONF = 'news_agrregator.urls'
 
@@ -128,12 +134,20 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+
    # 'DEFAULT_PAGINATION_CLASS': 'news.pagination.LinkHeaderPagination',
    # 'PAGE_SIZE': 100
 }

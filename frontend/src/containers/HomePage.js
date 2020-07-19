@@ -62,42 +62,6 @@ class HomePage extends React.Component {
 }
 export default HomePage;
 
-/*
-    render() {
-        return ( <
-            div > {
-
-                this.state.articles.map(item => ( <
-                    div key = { item.id } >
-                    <
-                    h3 > Title - > { item.title } < /h3> <
-                    a href = "{item.url}" > Source URL: { item.url } < /a> <
-                    br / >
-
-
-                    <
-                    span > Description: { item.description } < /span>
-
-
-
-
-
-                    <
-                    br / > < br / > < br / >
-                    <
-                    /div>
-                ))
-            } <
-            /div>
-        );
-    }
-}
-
-
-export default HomePage;
-*/
-
-
 
 /*
     //componentDidMount()
