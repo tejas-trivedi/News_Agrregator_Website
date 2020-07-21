@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
             <
             li > < img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/768px-User_font_awesome.svg.png"
             width = "100px/" / > < /li> <
-            li > < h1 > Sign in < /h1></li >
+            li > < h1 > Login < /h1></li >
             <
             li > < input type = "text"
             name = "username"
