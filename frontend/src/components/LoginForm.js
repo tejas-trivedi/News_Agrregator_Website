@@ -54,15 +54,23 @@ class LoginForm extends React.Component {
             li > < h1 > Sign in < /h1></li >
             <
             li > < input type = "text"
-            name = "User Name"
+            name = "username"
             value = { this.state.username }
-            placeholder = "Username" / > < /li> <
+            onChange = { this.handle_change }
+            placeholder = "Username" / > < /li>
+
+            <
             li > < input type = "password"
-            name = "Password"
-            placeholder = "..........." / > < /li> <
-            li > < input type = "button"
-            name = "Login"
-            defaultValue = "Submit" / > < /li> <
+            name = "password"
+            value = { this.state.password }
+            onChange = { this.handle_change }
+            placeholder = "Password" / > < /li>
+
+            <
+            li > < input type = "submit"
+            type = "submit" / > < /li>
+
+            <
             li > < a href > Forgot Password ? < /a></li >
             <
             a href = "file:///C:/Users/Vrinda%20Marwah/Desktop/webpages/new%20acct.html" > Create an account < /a> <
@@ -82,8 +90,6 @@ LoginForm.propTypes = {
     handle_login: PropTypes.func.isRequired
 };
 
-
-
 /*
 
 <
@@ -101,5 +107,7 @@ LoginForm.propTypes = {
             onChange = { this.handle_change }
             /> <
             input type = "submit" / >
+
+            <li><input type="submit" name="Login" defaultValue="Submit" /></li>     Earlier in form html
 
 */
