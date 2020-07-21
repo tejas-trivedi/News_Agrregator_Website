@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
             <
             li > < a href > Forgot Password ? < /a></li >
             <
-            a href = "file:///C:/Users/Vrinda%20Marwah/Desktop/webpages/new%20acct.html" > Create an account < /a> <
+            a href = "signup.css" > Create an account < /a> <
             /ul> <
             /div> <
             /div>
