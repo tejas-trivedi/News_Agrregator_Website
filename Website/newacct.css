@@ -1,67 +1,79 @@
 body{
-    background-image: linear-gradient(to right,skyblue,white);
-    
+	margin: 0;
+	padding: 0;
+	background-image: url('../images/bg.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
-.logo{
-    margin-left: 100px;
+.new{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	width:700px;
+	height:550px;
+	padding:80px 40px;
+	background-color: rgba(0,0,0,0.7)
 }
-.this{
-    float:right;
-    margin-right: 190px;
-    margin-top:30px;
-    text-decoration: none;
+.uicon{
+	position: absolute;
+	border-radius: 50%;
+	overflow: hidden;
+	top:-60px;
+	left:320px;
 }
-.form-container{
-    width:800px;
-    height:580px;
-    background-color:#FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0 #000000;
-    margin: auto;
-    margin-top:150px;
+.new h2{
+	padding: 2px 0 10px 0;
+	color:#FFFFFF;
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	font-size: 45px;
+	letter-spacing: 4px;
 }
-h1{
-    font-family: "arial";
-   margin-left: 40px;
-    text-align: center;
-  
+.new img{
+	width:130px;
+	height:130px;
 }
-.list{
-    list-style-type: none;
-    padding-left: 125px;
-
+.new input{
+	width:80%;
+	margin-bottom: 50px;
+	margin-left:75px;
 }
-
-.list li{
-    width:500px;
-    margin-bottom: 30px;
-
+.new input[type=name],.new input[type=email],.new input[type=password]{
+	border:none;
+	border-bottom: 1px solid #FFFFFF;
+	background:transparent;
+	outline:none;
+	height:30px;
+	color:#FFFFFF;
+	font-size: 15px;
 }
-
-.list li input{
-    width:550px;
-    height:40px;
-   text-align: center;
-    padding: 8px 0px;
-    border:none;
-    background-color: #d3d3d3;
-    border-radius: 5px;
-    font-size:18px;
+.new input[type=button]{
+	height: 40px;
+	width:50%!important;
+	color:#000000;
+	font-size: 17px;
+	background:#FF0040;
+	border-radius: 25px;
+	border:none;
+	margin-top: 3%;
+	margin-left: 27%;
+	font-weight: bold;
+	outline:none;
 }
-
-.list li input[type="button"]{
-    background-color: #0174DF;
-    border:none;
-    color: #FFFFFF;
+.new input[type=button]:hover{
+	background-color: #00FFFF;
 }
-header{
-    margin-left: 150px;
-    font-family: "Verdana";
-    font-size:20px;
-
-}
-img{
-   
-    margin-top:20px;
-    margin-left: 220px;
+.new p{
+	color:#FFFFFF;
+	font-family: Verdana;
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 20px;
 }
