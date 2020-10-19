@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url('../images/bg.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+.new{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	width:700px;
+	height:550px;
+	padding:80px 40px;
+	background-color: rgba(0,0,0,0.7)
+}
+.uicon{
+	position: absolute;
+	border-radius: 50%;
+	overflow: hidden;
+	top:-60px;
+	left:320px;
+}
+.new h2{
+	padding: 2px 0 10px 0;
+	color:#FFFFFF;
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	font-size: 45px;
+	letter-spacing: 4px;
+}
+.new img{
+	width:130px;
+	height:130px;
+}
+.new input{
+	width:80%;
+	margin-bottom: 50px;
+	margin-left:75px;
+}
+.new input[type=name],.new input[type=email],.new input[type=password]{
+	border:none;
+	border-bottom: 1px solid #FFFFFF;
+	background:transparent;
+	outline:none;
+	height:30px;
+	color:#FFFFFF;
+	font-size: 15px;
+}
+.new input[type=button]{
+	height: 40px;
+	width:50%!important;
+	color:#000000;
+	font-size: 17px;
+	background:#FF0040;
+	border-radius: 25px;
+	border:none;
+	margin-top: 3%;
+	margin-left: 27%;
+	font-weight: bold;
+	outline:none;
+}
+.new input[type=button]:hover{
+	background-color: #00FFFF;
+}
+.new p{
+	color:#FFFFFF;
+	font-family: Verdana;
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 20px;
+}
